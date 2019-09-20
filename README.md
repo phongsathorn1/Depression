@@ -13,3 +13,9 @@
 	- ให้คำแนะนำเกี่ยวกับการรักษาโรคซึมเศร้า ทั้งในด้านการดูแลตนเองและแนวทางการรักษาของแพทย์
 - ### Up-Coming Events Service
 	- แนะนำ Events ที่มีส่วนช่วยพัฒนาสุขภาพจิต และ ป้องกัน Mental Disorder ที่ถูกจัดขึ้นในประเทศไทย เช่น กิจกรรรมของ Chula-Wellness
+
+## Use Case
+![](image/usecase.png)
+
+## Micro-Services Overview
+![](image/microservices_overview.png)
