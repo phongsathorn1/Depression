@@ -104,7 +104,7 @@
 }
 ```
 
-- #### ⭐ 
+- #### ⭐ Interpretation
   URL :  `/interpretation`
   Method :  `POST`
   **Response**
