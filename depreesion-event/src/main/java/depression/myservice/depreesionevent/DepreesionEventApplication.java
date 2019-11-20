@@ -1,13 +1,13 @@
-package microserviceproject.eventmicroservice;
+package depression.myservice.depreesionevent;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EventMicroserviceApplication {
+public class DepreesionEventApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EventMicroserviceApplication.class, args);
+		SpringApplication.run(DepreesionEventApplication.class, args);
 	}
 
 }
