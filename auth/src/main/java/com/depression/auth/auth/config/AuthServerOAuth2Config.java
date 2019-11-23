@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.Resource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -21,6 +22,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.AccessTokenConverter;
+import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
@@ -36,17 +38,15 @@ public class AuthServerOAuth2Config extends AuthorizationServerConfigurerAdapter
     @Qualifier("authenticationManagerBean")
     private AuthenticationManager authenticationManager;
 
+    @Qualifier("dataSource")
+    @Autowired
+    private DataSource dataSource;
+
     @Value("classpath:schema.sql")
     private Resource schemaScript;
 
     @Autowired
     UserDetailsService userDetailsService;
-
-//    @Value("classpath:data.sql")
-//    private Resource dataScript;
-
-    @Autowired
-    private Environment env;
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
@@ -55,24 +55,18 @@ public class AuthServerOAuth2Config extends AuthorizationServerConfigurerAdapter
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-//        clients.jdbc(dataSource())
-//                .withClient("sampleClientId")
-//                .authorizedGrantTypes("implicit")
-//                .scopes("read")
-//                .autoApprove(true)
-//                .and()
-//                .withClient("clientIdPassword")
-//                .secret("secret")
-//                .authorizedGrantTypes(
-//                        "password", "authorization_code", "refresh_token")
-//                .scopes("read");
-        clients.inMemory()
-                .withClient("fooClientId").secret("secret")
-                .authorizedGrantTypes("password", "authorization_code", "refresh_token").scopes("read", "write")
-//                .authorities("ROLE_CLIENT", "ROLE_TRUSTED_CLIENT", "USER", "ADMIN")
+        clients.jdbc(dataSource).withClient("fooClientId")
+                .secret(bCryptPasswordEncoder().encode("secret"))
+                .authorizedGrantTypes("password", "authorization_code", "refresh_token", "client_credentials")
+                .scopes("read", "write")
+                .authorities("ROLE_CLIENT", "ROLE_TRUSTED_CLIENT", "USER", "ADMIN")
                 .autoApprove(true);
 //                .accessTokenValiditySeconds(180)//Access token is only valid for 3 minutes.
 //                .refreshTokenValiditySeconds(600);
+    }
+
+    public BCryptPasswordEncoder bCryptPasswordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
     @Override
@@ -94,27 +88,26 @@ public class AuthServerOAuth2Config extends AuthorizationServerConfigurerAdapter
         return new JwtTokenStore(defaultAccessTokenConverter());
     }
 
-//    @Bean
-//    public DataSourceInitializer dataSourceInitializer(DataSource dataSource) {
-//        DataSourceInitializer initializer = new DataSourceInitializer();
-//        initializer.setDataSource(dataSource);
-//        initializer.setDatabasePopulator(databasePopulator());
-//        return initializer;
-//    }
-//
-//    private DatabasePopulator databasePopulator() {
-//        ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
-//        populator.addScript(schemaScript);
-//        return populator;
-//    }
+    @Bean
+    @Primary
+    public DefaultTokenServices tokenServices() {
+        DefaultTokenServices defaultTokenServices = new DefaultTokenServices();
+        defaultTokenServices.setTokenStore(tokenStore());
+        defaultTokenServices.setSupportRefreshToken(true);
+        return defaultTokenServices;
+    }
 
-//    @Bean
-//    public DataSource dataSource() {
-//        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-//        dataSource.setDriverClassName(env.getProperty("spring.datasource.driver-class-name"));
-//        dataSource.setUrl(env.getProperty("spring.datasource.url"));
-//        dataSource.setUsername(env.getProperty("spring.datasource.username"));
-//        dataSource.setPassword(env.getProperty("spring.datasource.password"));
-//        return dataSource;
-//    }
+    @Bean
+    public DataSourceInitializer dataSourceInitializer(DataSource dataSource) {
+        DataSourceInitializer initializer = new DataSourceInitializer();
+        initializer.setDataSource(dataSource);
+        initializer.setDatabasePopulator(databasePopulator());
+        return initializer;
+    }
+
+    private DatabasePopulator databasePopulator() {
+        ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
+        populator.addScript(schemaScript);
+        return populator;
+    }
 }

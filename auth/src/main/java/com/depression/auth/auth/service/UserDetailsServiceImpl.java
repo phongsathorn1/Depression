@@ -17,7 +17,7 @@ import java.util.Arrays;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
-    private UserService userInfoDAO;
+    private UserService userService;
 
 //    @Autowired
 //    public void setProjectRepository(final UserService projectRepository) {
@@ -28,8 +28,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserInfo user = userInfoDAO.getUserInfoByUserName(username);
+        UserInfo user = userService.getUserInfoByUsername(username);
         GrantedAuthority authority = new SimpleGrantedAuthority(user.getRole());
-        return new User(user.getUserName(), user.getPassword(), Arrays.asList(authority));
+        return new User(user.getUsername(), user.getPassword(), Arrays.asList(authority));
     }
 }

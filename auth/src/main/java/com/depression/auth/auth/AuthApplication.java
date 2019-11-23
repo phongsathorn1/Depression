@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @EnableAutoConfiguration
 @SpringBootApplication
-@RestController
+//@RestController
 public class AuthApplication {
 
-	@Autowired
-	private UserService userService;
+//	@Autowired
+//	private UserService userService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(AuthApplication.class, args);

@@ -17,9 +17,9 @@ public class UserService {
     @Autowired
     private UserDetailsRepository userDatailsRepository;
 
-    public UserInfo getUserInfoByUserName(String userName) {
-        short enabled = 1;
-        return userDatailsRepository.findByUserNameAndEnabled(userName, enabled);
+    public UserInfo getUserInfoByUsername(String username) {
+        boolean enabled = true;
+        return userDatailsRepository.findByUsername(username);
     }
 
     public List<UserInfo> getAllActiveUserInfo() {
@@ -37,7 +37,7 @@ public class UserService {
 
     public UserInfo updateUser(Integer id, UserInfo userRecord) {
         UserInfo user = userDatailsRepository.findById(id);
-        user.setUserName(userRecord.getUserName());
+        user.setUsername(userRecord.getUsername());
         user.setPassword(userRecord.getPassword());
         user.setRole(userRecord.getRole());
         user.setEnabled(userRecord.is_enabled());
