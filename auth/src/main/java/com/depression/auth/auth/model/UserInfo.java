@@ -1,9 +1,11 @@
 package com.depression.auth.auth.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -17,6 +19,12 @@ public class UserInfo implements Serializable {
 
     @Column(name = "username", length = 50)
     private String username;
+
+    @Column
+    private String firstname;
+
+    @Column
+    private String lastname;
 
     @Column(name = "password", length = 225)
     private String password;
@@ -46,6 +54,32 @@ public class UserInfo implements Serializable {
         this.username = username;
     }
 
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @JsonIgnore
+    @JsonProperty(value = "password")
     public String getPassword() {
         return password;
     }

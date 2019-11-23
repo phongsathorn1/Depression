@@ -19,11 +19,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private UserService userService;
 
-//    @Autowired
-//    public void setProjectRepository(final UserService projectRepository) {
-//        this.userInfoDAO = projectRepository;
-//    }
-
     public UserDetailsServiceImpl(){}
 
     @Override

@@ -1,7 +1,6 @@
 package com.depression.auth.auth.config;
 
 import com.depression.auth.auth.service.UserDetailsServiceImpl;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -13,8 +12,6 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.sql.DataSource;
@@ -51,26 +48,14 @@ public class ServerSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        http.authorizeRequests()
-//                .antMatchers("/oauth/token").permitAll()
-//                .anyRequest().authenticated()
-//                .and()
-//                .formLogin().permitAll();
-
-//        http.csrf().disable().sessionManagement()
-//                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         http.authorizeRequests()
-//                .authorizeRequests().antMatchers(HttpMethod.GET, "/user").hasRole("ADMIN")
-//                .and()
-//                .authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/user").permitAll()
-                .antMatchers("/oauth/token").permitAll()
+                .antMatchers(HttpMethod.POST, "/register").permitAll()
+                .antMatchers("/oauth/**").permitAll()
                 .anyRequest().authenticated();
     }
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(authenticationProvider());
-//        auth.inMemoryAuthentication().withUser("john").password("{noop}123").roles("ADMIN");
     }
 }
