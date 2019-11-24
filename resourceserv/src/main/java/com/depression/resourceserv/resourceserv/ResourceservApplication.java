@@ -8,6 +8,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
 import java.util.HashMap;
 
 @SpringBootApplication
@@ -30,6 +31,14 @@ public class ResourceservApplication {
 		result.put("details", authentication.getDetails());
 		result.put("principle", authentication.getPrincipal());
 
+		return result;
+	}
+
+	@GetMapping("/test")
+	public HashMap<String, Object> test(Principal principal){
+		HashMap<String, Object> result = new HashMap<>();
+
+		result.put("principal", principal);
 		return result;
 	}
 
