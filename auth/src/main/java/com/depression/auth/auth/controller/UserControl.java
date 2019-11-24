@@ -5,11 +5,13 @@ import com.depression.auth.auth.model.UserRequestModel;
 import com.depression.auth.auth.service.UserService;
 import org.apache.commons.validator.routines.EmailValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -17,6 +19,13 @@ public class UserControl {
 
     @Autowired
     private UserService userService;
+
+    @GetMapping("/me")
+    public Object me(Principal principal){
+        UserInfo userInfo = userService.getUserInfoByUsername(principal.getName());
+        return userInfo;
+
+    }
 
     @GetMapping("/user")
     public Object getAllUser(@RequestHeader HttpHeaders requestHeader) {
@@ -32,6 +41,11 @@ public class UserControl {
         System.out.println(userRecord);
         return userService.addUser(userRecord);
     }
+
+//    @PostMapping("/login")
+//    public Object login(@RequestParam String username, @RequestParam String password){
+//
+//    }
 
     @PostMapping("/register")
     public UserInfo register(@RequestBody UserRequestModel userRecord){

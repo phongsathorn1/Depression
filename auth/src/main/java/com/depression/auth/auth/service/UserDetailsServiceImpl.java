@@ -2,6 +2,7 @@ package com.depression.auth.auth.service;
 
 import com.depression.auth.auth.model.UserInfo;
 
+import org.apache.commons.validator.routines.EmailValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,7 +24,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserInfo user = userService.getUserInfoByUsername(username);
+        UserInfo user = new UserInfo();
+        if(EmailValidator.getInstance().isValid(username)){
+            user = userService.getUserInfoByEmail(username);
+        }else {
+            user = userService.getUserInfoByUsername(username);
+        }
+
         GrantedAuthority authority = new SimpleGrantedAuthority(user.getRole());
         return new User(user.getUsername(), user.getPassword(), Arrays.asList(authority));
     }

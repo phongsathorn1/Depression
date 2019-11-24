@@ -49,7 +49,6 @@ public class ServerSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/register").permitAll()
                 .antMatchers("/oauth/**").permitAll()
                 .anyRequest().authenticated();
     }

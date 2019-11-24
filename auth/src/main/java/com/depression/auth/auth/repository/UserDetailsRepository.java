@@ -15,4 +15,6 @@ public interface UserDetailsRepository extends JpaRepository<UserInfo, String> {
     UserInfo findByUsernameAndEnabledTrue(String username);
     List<UserInfo> findAllByEnabled(boolean enable);
     UserInfo findByUsername(String username);
+
+    UserInfo findByEmail(String email);
 }

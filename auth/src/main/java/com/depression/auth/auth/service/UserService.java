@@ -22,6 +22,10 @@ public class UserService {
         return userDatailsRepository.findByUsername(username);
     }
 
+    public UserInfo getUserInfoByEmail(String email){
+        return userDatailsRepository.findByEmail(email);
+    }
+
     public List<UserInfo> getAllActiveUserInfo() {
         return userDatailsRepository.findAllByEnabled(true);
     }
