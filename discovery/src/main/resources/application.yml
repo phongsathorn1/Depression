@@ -2,5 +2,7 @@ eureka:
    client:
       registerWithEureka: false
       fetchRegistry: false
+   server:
+      waitTimeInMsWhenSyncEmpty: 5
 server:
    port: 8761
