@@ -38,7 +38,7 @@ public class EventController {
 		service.delete(id);
 	}
 	
-	@RequestMapping(value="/get/{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/view/{id}", method=RequestMethod.GET)
 	public Event getEvent(@PathVariable int id) {
 		return service.get(id);
 	}
