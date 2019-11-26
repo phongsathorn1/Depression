@@ -12,11 +12,9 @@ spring:
       naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
 eureka:
   instance:
-    hostname: localhost
+    hostname: 34.66.153.219
     port: 8761
     preferIpAddress: true
   client:
-    registerWithEureka: true
-    fetchRegistry: true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
