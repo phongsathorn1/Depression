@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: authentication-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/authen
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+eureka:
+  instance:
+    hostname: localhost
+    port: 8761
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/

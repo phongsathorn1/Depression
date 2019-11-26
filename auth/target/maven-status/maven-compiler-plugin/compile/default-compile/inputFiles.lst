@@ -1,0 +1,11 @@
+/Users/phongsathorn/Projects/Depression/auth/src/main/java/com/depression/auth/auth/service/UserService.java
+/Users/phongsathorn/Projects/Depression/auth/src/main/java/com/depression/auth/auth/service/UserDetailsServiceImpl.java
+/Users/phongsathorn/Projects/Depression/auth/src/main/java/com/depression/auth/auth/model/UserInfo.java
+/Users/phongsathorn/Projects/Depression/auth/src/main/java/com/depression/auth/auth/config/ServerSecurityConfig.java
+/Users/phongsathorn/Projects/Depression/auth/src/main/java/com/depression/auth/auth/model/UserRequestModel.java
+/Users/phongsathorn/Projects/Depression/auth/src/main/java/com/depression/auth/auth/config/AuthServerOAuth2Config.java
+/Users/phongsathorn/Projects/Depression/auth/src/main/java/com/depression/auth/auth/repository/UserDetailsRepository.java
+/Users/phongsathorn/Projects/Depression/auth/src/main/java/com/depression/auth/auth/config/ResourceServerConfig.java
+/Users/phongsathorn/Projects/Depression/auth/src/main/java/com/depression/auth/auth/controller/UserControl.java
+/Users/phongsathorn/Projects/Depression/auth/src/main/java/com/depression/auth/auth/error/ApiError.java
+/Users/phongsathorn/Projects/Depression/auth/src/main/java/com/depression/auth/auth/AuthApplication.java
