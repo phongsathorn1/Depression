@@ -33,7 +33,7 @@ public class AuthServerOAuth2Config extends AuthorizationServerConfigurerAdapter
     @Qualifier("authenticationManagerBean")
     private AuthenticationManager authenticationManager;
 
-    @Qualifier("dataSource")
+//    @Qualifier("dataSource")
     @Autowired
     private DataSource dataSource;
 
@@ -52,14 +52,15 @@ public class AuthServerOAuth2Config extends AuthorizationServerConfigurerAdapter
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.jdbc(dataSource).withClient("fooClientId")
-                .secret(bCryptPasswordEncoder().encode("secret"))
-                .authorizedGrantTypes("password", "authorization_code", "refresh_token", "client_credentials")
-                .scopes("read", "write")
-                .authorities("ROLE_CLIENT", "ROLE_TRUSTED_CLIENT", "ROLE_USER", "ROLE_ADMIN", "ROLE_DOCTOR")
-                .autoApprove(true)
-                .accessTokenValiditySeconds(60*60*24*30)//Access token is only valid for 3 minutes.
-                .refreshTokenValiditySeconds(60*60*24*31);
+//        clients.jdbc(dataSource).withClient("fooClientId")
+//                .secret(bCryptPasswordEncoder().encode("secret"))
+//                .authorizedGrantTypes("password", "authorization_code", "refresh_token", "client_credentials")
+//                .scopes("read", "write")
+//                .authorities("ROLE_CLIENT", "ROLE_TRUSTED_CLIENT", "ROLE_USER", "ROLE_ADMIN", "ROLE_DOCTOR")
+//                .autoApprove(true)
+//                .accessTokenValiditySeconds(60*60*24*30)//Access token is only valid for 3 minutes.
+//                .refreshTokenValiditySeconds(60*60*24*31);
+        clients.jdbc(dataSource);
     }
 
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
