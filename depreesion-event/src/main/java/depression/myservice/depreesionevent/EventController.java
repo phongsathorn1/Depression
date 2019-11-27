@@ -13,14 +13,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 public class EventController {
 	@Autowired
 	private EventService service;
+	
 	@Secured({"ROLE_EVENTMGR"})
 	@RequestMapping(value="/add",method = RequestMethod.POST)
 	public Event save(@RequestBody Event event) {
+		
 		return service.save(event);
 	}
 	
