@@ -23,7 +23,7 @@ public class Interpretation {
     }
 
     private void setDepressionSeverity(int score) {
-        if (isBetween(score, 1, 4)) {
+        if (isBetween(score, 0, 4)) {
             this.depressionSeverity = "ไม่มีภาวะซึมเศร้า";
         } else if (isBetween(score, 5, 9)) {
             this.depressionSeverity = "มีภาวะซึมเศร้าเล็กน้อย";
