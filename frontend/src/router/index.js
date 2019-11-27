@@ -15,8 +15,8 @@ const routes = [
     component: Home
   },
   {
-    path: '/location',
-    name: 'location',
+    path: '/hospital',
+    name: 'hospital',
     component: Location
   },
   {
