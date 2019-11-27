@@ -12,12 +12,16 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.sql.DataSource;
 
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(securedEnabled = true)
+@EnableGlobalMethodSecurity(prePostEnabled = true,
+        securedEnabled = true,
+        jsr250Enabled = true
+)
 public class ServerSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -48,10 +52,10 @@ public class ServerSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.antMatcher("/**").authorizeRequests()
-                .antMatchers("/oauth/**", "/login**").permitAll()
-                .and()
-                .authorizeRequests().anyRequest().authenticated()
+        http
+                .authorizeRequests()
+                .antMatchers("/oauth/token", "/oauth/authorize**", "/login**").permitAll()
+                .anyRequest().authenticated()
                 .and()
                 .formLogin().permitAll()
                 .and()

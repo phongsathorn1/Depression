@@ -2,6 +2,7 @@ package com.depression.auth.auth.config;
 
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
@@ -28,10 +29,13 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, SECURED_PATTERN).access(SECURED_WRITE_SCOPE)
                 .anyRequest().access(SECURED_READ_SCOPE);*/
 
-        http.antMatcher("/**").authorizeRequests()
-                .antMatchers("/oauth/**").permitAll()
-                .antMatchers("/register").permitAll()
-                .anyRequest().authenticated();
+//        http.antMatcher("/**").authorizeRequests()
+//                .antMatchers("/oauth**").permitAll()
+//                .antMatchers("/register").permitAll()
+//                .antMatchers("/login**").permitAll()
+//                .anyRequest().authenticated();
+
+        http.authorizeRequests().anyRequest().permitAll();
     }
 
 }

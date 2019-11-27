@@ -16,6 +16,7 @@ import java.security.Principal;
 import java.util.List;
 
 @RestController
+@RequestMapping("api/v1.0/")
 public class UserControl {
 
     @Autowired
