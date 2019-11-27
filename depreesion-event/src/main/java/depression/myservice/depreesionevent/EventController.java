@@ -3,6 +3,7 @@ package depression.myservice.depreesionevent;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class EventController {
 	@Autowired
 	private EventService service;
-	
+	@Secured({"ROLE_EVENTMGR"})
 	@RequestMapping(value="/add",method = RequestMethod.POST)
 	public Event save(@RequestBody Event event) {
 		return service.save(event);
@@ -32,7 +33,7 @@ public class EventController {
 	public String test() {
 		return "HelloWorld";
 	}
-	
+	@Secured({"ROLE_EVENTMGR"})
 	@RequestMapping(value="/delete/{id}", method=RequestMethod.DELETE)
 	public void edit(@PathVariable int id) {
 		service.delete(id);
