@@ -1,5 +1,6 @@
 package com.depression.auth.auth.controller;
 
+import com.depression.auth.auth.model.OAuth2Client;
 import com.depression.auth.auth.model.UserInfo;
 import com.depression.auth.auth.model.UserRequestModel;
 import com.depression.auth.auth.service.UserService;
@@ -41,11 +42,6 @@ public class UserControl {
         System.out.println(userRecord);
         return userService.addUser(userRecord);
     }
-
-//    @PostMapping("/login")
-//    public Object login(@RequestParam String username, @RequestParam String password){
-//
-//    }
 
     @PostMapping("/register")
     public UserInfo register(@RequestBody UserRequestModel userRecord){
