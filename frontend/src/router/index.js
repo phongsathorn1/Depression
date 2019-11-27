@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Location from '../views/Location.vue'
 import Hospital from '../views/Hospital.vue'
+import CreateHospital from '../views/CreateHospital.vue'
+import Login from '../views/Login.vue'
 
 Vue.use(VueRouter)
 
@@ -18,9 +20,19 @@ const routes = [
     component: Location
   },
   {
+    path: '/hospital/create',
+    name: 'CreateHospital',
+    component: CreateHospital
+  },
+  {
     path: '/hospital/:id',
     name: 'Hospital',
     component: Hospital
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
   }
 ]
 
