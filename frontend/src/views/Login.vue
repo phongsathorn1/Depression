@@ -1,6 +1,25 @@
 <template>
-  <div>
-    <button @click="login" type="button" class="btn btn-primary">login</button>
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+    </form>
+    <button @click="login" type="submit" class="btn btn-primary">Submit</button>
   </div>
 </template>
 
@@ -21,7 +40,7 @@ export default {
         scope: "read write",
       });
       const auth = await getOwnerCredentials();
-      console.log(auth)
+      console.log(auth);
     },
   },
 };
