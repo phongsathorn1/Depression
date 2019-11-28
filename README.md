@@ -1,6 +1,8 @@
 
 # Mor-Wai
 > "หมอไว" Services for mental disorder (Depression) prevention and medical care.
+## Presentation
+> Slide: https://docs.google.com/presentation/d/1BZIsB1y6jIJ1eJHjpqhmk_XVLO7OzJEHKhPe7wGumFA/edit?usp=sharing
 ## Features
 - ### Depression Inventory Test Services (แบบทดสอบประเมิณอาการโรคซึมเศร้า)
 	- มีที่มาจากการศึกษางานวิจัยโรคซึมเศร้า, การปรึกษาแพทย์ และ นำมาทำเป็นแบบทดสอบโรคซึมเศร้าเพื่อประเมิณอาการโรคซึมเศร้าและประเภทของโรคซึมเศร้าที่เป็น
@@ -171,7 +173,6 @@
 
 ---
 - ### Treatment Recommendations Services
-	- ทำการติดต่อประสานงานกับแพทย์ หรือ โรงพยาบาลใกล้เคียงซึ่งมีจิตแพทย์ให้การรักษา
 	- ให้คำแนะนำเกี่ยวกับการรักษาโรคซึมเศร้า ทั้งในด้านการดูแลตนเองและแนวทางการรักษาของแพทย์
 
 ---
