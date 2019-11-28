@@ -34,14 +34,6 @@
           <div v-if="interpretation">
             <h3>คะแนนรวม: {{ interpretation.totalScore }}</h3>
             <h2>{{ interpretation.depressionSeverity }}</h2>
-          </div>
-        </div>
-      </div>
-
-      <!-- ตรงนี้พีทำ จะเป็นส่วนของแสดงคำแนะนำ -->
-      <div class="col-sm-12 col-lg-4">
-        <div class="sticky-top">
-          <div v-if="suggestions">
             <h3>คำแนะนำ: {{ suggestions.text }}</h3>
           </div>
         </div>

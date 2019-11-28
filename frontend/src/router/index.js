@@ -5,6 +5,8 @@ import Location from '../views/Location.vue'
 import Hospital from '../views/Hospital.vue'
 import CreateHospital from '../views/CreateHospital.vue'
 import Login from '../views/Login.vue'
+import Event from '../views/Event.vue'
+import ManageEvent from '../views/ManageEvent.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +35,16 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/event',
+    name: 'Event',
+    component: Event
+  },
+  {
+    path: '/manageEvent',
+    name: 'ManageEvent',
+    component: ManageEvent
   }
 ]
 
