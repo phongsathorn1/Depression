@@ -1,0 +1,19 @@
+
+spring:
+   application:
+      name: event-service
+   profiles:
+      active: default
+   cloud:
+      config:
+         enabled: true
+
+eureka:
+   instance:
+      preferIpAddress: true
+   client:
+      serviceUrl:
+         defaultZone: http://34.66.153.219:8761/eureka/
+      
+server:
+   port: 8000
