@@ -276,7 +276,7 @@
 - ### Treatment Recommendations Services
 	- ให้คำแนะนำเกี่ยวกับการรักษาโรคซึมเศร้า ทั้งในด้านการดูแลตนเองและแนวทางการรักษาของแพทย์
 	- ทำการรับคะแนนที่ได้จาก Depression Test Service มาให้คำแนะนำในการรักษา<br>
-		**URL**: `http://34.69.92.81/suggest/suggestion/{total_score}` **Method**: `GET`
+		**URL**: `http://34.69.92.81/suggest/suggestion/{total_score}` **Method**: `GET`  
 		***หมายเหตุ : เพื่อป้องกันข้อผิดพลาดด้านการแสดงผลกรุณาใช้ Postman**
 			- Get Suggestion
 			- **Response :**
@@ -292,7 +292,7 @@
 		}
 		```
 		- ดูคำแนะนำการรักษาทั้งหมด
-		**URL :** `http://34.69.92.81/suggest/suggestion_list` **Method**: `GET`
+		**URL :** `http://34.69.92.81/suggest/suggestion_list` **Method**: `GET`  
 		***หมายเหตุ : เพื่อป้องกันข้อผิดพลาดด้านการแสดงผลกรุณาใช้ Postman**
 			- Get Suggestion List
 			- **Response**
