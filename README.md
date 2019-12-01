@@ -371,7 +371,18 @@ Example :
 ```
 
 ### การเข้าดูในต่ละ Event (URL : /view, Method : GET)
-จะ Return กลับมาให้เป็น Json
+	จะ Return กลับมาให้เป็น Json
+Example :
+```json
+[
+  {
+     "event_name" : "Present_project",
+     "event_datails" : "present mircroservice",
+     "event_date" : "2020-3-21",
+     "event_place" : "IT"
+   }
+]
+```
 
 ### การลบ Event( URL : /delete/{id} , Method : POST) ID ให้ใส่เลขที่ต้องการจะลบ
 
