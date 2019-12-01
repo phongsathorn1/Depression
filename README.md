@@ -170,6 +170,107 @@
 ---
 - ### Hospital Location Service
 	-	ค้นหาโรงพยาบาลที่ใกล้เคียงซึ่งมีจิตแพทย์พร้อมให้การรักษา
+  - 🌱 Usage
+    - get all location
+    ```
+        GET http://35.225.198.249:8000/location/
+    ```
+
+    ```python
+      # Response Type
+        [
+          {
+              "id": int,
+              "name": string,
+              "description": string,
+              "created_at": string,
+              "latitude": float,
+              "longitude": float
+          }
+        ]
+    ```
+    - add location
+    ```
+        POST http://35.225.198.249:8000/location/
+    ```
+    ```python
+        # Payload Type
+        [
+          {
+            "name": string,
+            "description": string,
+            "latitude": float,
+            "longitude": float
+          }
+        ]
+    ```
+
+    - get specific location
+    ```
+        GET http://35.225.198.249:8000/location/<id>
+    ```
+
+    ```python
+      # Response Type
+        {
+          "id": int,
+          "name": string,
+          "description": string,
+          "created_at": string,
+          "latitude": float,
+          "longitude": float
+        }
+    ```
+
+    - edit location infomation
+    ```
+        PATCH http://35.225.198.249:8000/location/<id>
+    ```
+    ```
+        PUT http://35.225.198.249:8000/location/<id>
+    ```
+
+    ```python
+        # Payload Type
+        # PUT requires all fields, patch otherwise
+        [
+          {
+              "name": string,
+              "description": string,
+              "latitude": float,
+              "longitude": float
+          }
+        ]
+    ```
+
+    - delete location infomation
+    ```
+        DELETE http://35.225.198.249:8000/location/<id>
+    ```
+
+    - get filter location using user location
+    ```
+        GET http://35.225.198.249:8000/location/filter
+    ```
+    ```python
+        # Parameter
+        lat = "float: user's latitude"
+        lon = "float: user's longitude"
+        km = "float: filter distance"
+    ```
+    ```python
+        # Response Type
+        [
+          {
+              "id": int,
+              "name": string,
+              "description": string,
+              "created_at": string,
+              "latitude": float,
+              "longitude": float
+          }
+        ]
+    ```
 
 ---
 - ### Treatment Recommendations Services
