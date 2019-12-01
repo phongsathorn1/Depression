@@ -1,5 +1,4 @@
----
-- ### Treatment Recommendations Services
+### Treatment Recommendations Services
 	- ให้คำแนะนำเกี่ยวกับการรักษาโรคซึมเศร้า ทั้งในด้านการดูแลตนเองและแนวทางการรักษาของแพทย์
 	- ทำการรับคะแนนที่ได้จาก Depression Test Service มาให้คำแนะนำในการรักษา<br>
 		- รับคำแนะนำการรักษา
