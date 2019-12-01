@@ -278,7 +278,7 @@
 	- ทำการรับคะแนนที่ได้จาก Depression Test Service มาให้คำแนะนำในการรักษา<br>
 		**URL**: `http://34.69.92.81/suggest/suggestion/{total_score}` **Method**: `GET`  
 		***หมายเหตุ : เพื่อป้องกันข้อผิดพลาดด้านการแสดงผลกรุณาใช้ Postman**
-			- Get Suggestion
+			- Get Suggestion  
 			- **Response :**
 		```json
 		{
