@@ -1,8 +1,8 @@
-package com.depression.auth.auth.controller;
+package com.depression.resourceserv.resourceserv.controller;
 
-import com.depression.auth.auth.model.UserInfo;
-import com.depression.auth.auth.model.UserRequestModel;
-import com.depression.auth.auth.service.UserService;
+import com.depression.resourceserv.resourceserv.model.UserInfo;
+import com.depression.resourceserv.resourceserv.model.UserRequestModel;
+import com.depression.resourceserv.resourceserv.services.UserService;
 import org.apache.commons.validator.routines.EmailValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -13,13 +13,18 @@ import org.springframework.web.bind.annotation.*;
 import java.security.Principal;
 import java.util.List;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/v1.0")
 public class UserControl {
 
     @Autowired
     private UserService userService;
+
+    @GetMapping("/test")
+    public String test(){
+        return "Hello!";
+    }
 
     @GetMapping("/me")
     public Object me(Principal principal){

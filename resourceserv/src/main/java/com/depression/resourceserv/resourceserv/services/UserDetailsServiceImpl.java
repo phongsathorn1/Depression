@@ -1,7 +1,6 @@
-package com.depression.auth.auth.service;
+package com.depression.resourceserv.resourceserv.services;
 
-import com.depression.auth.auth.model.UserInfo;
-
+import com.depression.resourceserv.resourceserv.model.UserInfo;
 import org.apache.commons.validator.routines.EmailValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -16,7 +15,6 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.Arrays;
 
-@Service
 @Repository
 @Transactional
 public class UserDetailsServiceImpl implements UserDetailsService {

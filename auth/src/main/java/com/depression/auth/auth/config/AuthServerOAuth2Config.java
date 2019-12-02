@@ -47,12 +47,15 @@ public class AuthServerOAuth2Config extends AuthorizationServerConfigurerAdapter
     public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
         oauthServer.tokenKeyAccess("permitAll()")
                 .checkTokenAccess("isAuthenticated()")
+                .allowFormAuthenticationForClients()
                 .passwordEncoder(bCryptPasswordEncoder());
     }
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-//        clients.jdbc(dataSource).withClient("fooClientId")
+
+        clients.jdbc(dataSource);
+//                .withClient("fooClientId")
 //                .secret(bCryptPasswordEncoder().encode("secret"))
 //                .authorizedGrantTypes("password", "authorization_code", "refresh_token", "client_credentials")
 //                .scopes("read", "write")
@@ -60,7 +63,6 @@ public class AuthServerOAuth2Config extends AuthorizationServerConfigurerAdapter
 //                .autoApprove(true)
 //                .accessTokenValiditySeconds(60*60*24*30)//Access token is only valid for 3 minutes.
 //                .refreshTokenValiditySeconds(60*60*24*31);
-        clients.jdbc(dataSource);
     }
 
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
