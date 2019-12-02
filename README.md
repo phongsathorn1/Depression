@@ -376,8 +376,7 @@ Example :
 ]
 ```
 
-### การเข้าดูในต่ละ Event (URL : /view, Method : GET)
-<<<<<<< HEAD
+### การเข้าดูในแต่ละ Event (URL : /view, Method : GET)
 	จะ Return กลับมาให้เป็น Json
 Example :
 ```json
@@ -390,21 +389,14 @@ Example :
    }
 ]
 ```
-=======
-จะ Return กลับมาให้เป็น Json
->>>>>>> event_service
 
 ### การลบ Event( URL : /delete/{id} , Method : POST) ID ให้ใส่เลขที่ต้องการจะลบ
 
 ###  ดูแต่ละ Event (URL : /view/{id} , Method : POST) ID ให้ใส่เลขที่ต้องการจะดู
 
 
-
-<<<<<<< HEAD
 ## Use Case
 ![](image/usecase.png)
 
 ## Micro-Services Overview
 ![](image/microservices_overview.png)
-=======
->>>>>>> event_service
