@@ -531,11 +531,11 @@
 	
 # Depression
 
-## Event Service
+## Event Service ( URL : http://35.247.175.250:8000 )
 
 เป็น Service สำหรับการจัดการ Event ในโปรเจ็ค Depression โดยจะสามารถเพิ่ม ดูรายการ Event ทั้งหมด ดูแต่ละ Event และก็ลบ
 
-### การเพิ่ม Event( URL : /add , Method : Post)
+### การเพิ่ม Event( URL : http://35.247.175.250:8000/add , Method : Post)
 Example :
 ```json
 [
@@ -548,7 +548,7 @@ Example :
 ]
 ```
 
-### การเข้าดูในแต่ละ Event (URL : /view, Method : GET)
+### การเข้าดูในแต่ละ Event (URL : http://35.247.175.250:8000/view, Method : GET)
 	จะ Return กลับมาให้เป็น Json
 Example :
 ```json
@@ -562,9 +562,9 @@ Example :
 ]
 ```
 
-### การลบ Event( URL : /delete/{id} , Method : POST) ID ให้ใส่เลขที่ต้องการจะลบ
+### การลบ Event( URL : http://35.247.175.250:8000/delete/{id} , Method : POST) ID ให้ใส่เลขที่ต้องการจะลบ
 
-###  ดูแต่ละ Event (URL : /view/{id} , Method : POST) ID ให้ใส่เลขที่ต้องการจะดู
+###  ดูแต่ละ Event (URL : http://35.247.175.250:8000/view/{id} , Method : POST) ID ให้ใส่เลขที่ต้องการจะดู
 
 
 ## Use Case
