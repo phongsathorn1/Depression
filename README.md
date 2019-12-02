@@ -163,9 +163,162 @@
 ```
 
 ---
-- ### User Services
-	- Authentication part
-	- User's Profile
+- ### Authentication Services
+- **Get authentication token**
+	
+	**`POST`** oauth/token
+	
+	**Request**
+
+	```
+	Authorize Basic
+
+	username : fooClientId
+	password : secret
+	```
+	```
+	URL Parameters
+
+	grant_type : password
+	username : <username>
+	password: <password>
+	scope: read write
+	```
+
+	**Response**
+	```json
+	{
+		"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1Nzc0ODAxNjksInVzZXJfbmFtZSI6InBob25nc2F0aG9ybiIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiIwZWIzODM3Yi03ODZkLTQ0NjUtOTY2Ni1lYWFlNjE5MTM2NTkiLCJjbGllbnRfaWQiOiJmb29DbGllbnRJZCIsInNjb3BlIjpbInJlYWQiXX0.q-OpfpNeSaeedB8QRvp8bCDXMDc4uwIfDj9GyGEugBk",
+		"token_type": "bearer",
+		"refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJwaG9uZ3NhdGhvcm4iLCJzY29wZSI6WyJyZWFkIl0sImF0aSI6IjBlYjM4MzdiLTc4NmQtNDQ2NS05NjY2LWVhYWU2MTkxMzY1OSIsImV4cCI6MTU3NzU2NjU2OSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImp0aSI6ImUwMDA4YzQ1LTNkZTMtNDJhZS1hOWZmLTAyNTlhN2VkODk0YSIsImNsaWVudF9pZCI6ImZvb0NsaWVudElkIn0.pDbeYc_P1MKmr3vUJBx087fMSsoBp_y2fxnTq018q8c",
+		"expires_in": 2561746,
+		"scope": "read",
+		"jti": "0eb3837b-786d-4465-9666-eaae61913659"
+	}\
+	```
+
+- **Check authentication token**
+
+	**`GET`** oauth/check_token
+
+	**Request**
+
+	```
+	Authorize Basic
+
+	username : fooClientId
+	password : secret
+	```
+
+	```
+	URL Parameters
+
+	token: <token>
+	```
+
+	**Response**
+
+	```json
+	{
+		"user_name": "phongsathorn",
+		"scope": [
+			"read"
+		],
+		"active": true,
+		"exp": 1577482177,
+		"authorities": [
+			"ROLE_USER"
+		],
+		"jti": "9bd13c7f-60db-4bf4-81ef-6e6e44319ce1",
+		"client_id": "fooClientId"
+	}
+	```
+
+- **Check authentication token**
+
+	**`GET`** api/v1.0/me
+
+	**Request**
+
+	```
+	Authorize Bearer <token>
+	```
+
+	**Response**
+
+	```json
+	{
+	"id": 2,
+		"username": "phongsathorn",
+		"firstname": "Phongsathorn",
+		"lastname": "Kittiworapanya",
+		"email": "phongsathron@outlook.com",
+		"role": "ROLE_USER",
+		"_enabled": true
+	}
+	```
+
+- **Register client**
+
+	**`GET`** client/register
+
+	**Request**
+	```
+	Authorize Bearer <token>
+	```
+
+	```
+	Multipart form
+
+	name: <client name>
+	email: <developer email>
+	homepageUrl: <product homepage>
+	description: <product description>
+	redirectUrl: <OAuth2 redirect url>
+	```
+
+	**Response**
+	```json
+	{
+		"id": 4,
+		"version": null,
+		"oauth_client_id": {
+			"id": null,
+			"version": null,
+			"clientId": "f6f7fdbe-6acc-4594-a234-3e0ee3c74ee2",
+			"resourceIds": null,
+			"clientSecret": "jknREJSIAOZqsXAXRg3OL6f4iqvc8H",
+			"scope": "read,write",
+			"grantTypes": "password,authorization_code,refresh_token",
+			"webServerRedirectUri": "https://www.google.com/",
+			"authorities": "ROLE_USER",
+			"accessTokenValidity": 2592000,
+			"refreshTokenValidity": 2678400,
+			"additionalInfo": null,
+			"autoApprove": null
+		},
+		"name": "TestClient2",
+		"email": "client1@outlook.com",
+		"homepageUrl": "https://www.google.com/",
+		"description": "This is test client 1"
+	}
+	```
+
+- **Client Authorize**
+
+	**`GET`** oauth/authorize
+
+	**Request**
+
+	```
+	URL Parameters
+
+	client_id: <client_id>
+	response_type: code
+	redirect_uri: <redirect_uri>
+	```
+
+
 
 ---
 - ### Hospital Location Service
