@@ -1,9 +1,13 @@
 package com.depression.auth.auth.config;
 
+import com.depression.auth.auth.handle.CustomAuthenticationSuccessHandler;
 import com.depression.auth.auth.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -14,14 +18,16 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import javax.sql.DataSource;
 
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true,
-        securedEnabled = true,
-        jsr250Enabled = true
-)
+@Configuration
+@EnableGlobalMethodSecurity(securedEnabled = true)
+//@Order(1)
 public class ServerSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -52,16 +58,23 @@ public class ServerSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
-                .antMatchers("/oauth/token", "/oauth/authorize**", "/login**").permitAll()
-                .anyRequest().authenticated()
+        http.csrf().disable().authorizeRequests()
+                .antMatchers("/login**", "/oauth**", "/error**").permitAll()
                 .and()
                 .formLogin().permitAll()
+                .and().logout().permitAll()
                 .and()
-                .logout().permitAll();
+                .authorizeRequests()
+                .anyRequest().authenticated();
 
-        http.csrf().disable();
+//        http.csrf().disable();
+    }
+
+    @Bean
+    CorsConfigurationSource corsConfigurationSource() {
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
+        return source;
     }
 
     @Autowired

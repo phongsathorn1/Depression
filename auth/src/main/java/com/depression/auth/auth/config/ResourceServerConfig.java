@@ -29,13 +29,26 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, SECURED_PATTERN).access(SECURED_WRITE_SCOPE)
                 .anyRequest().access(SECURED_READ_SCOPE);*/
 
-//        http.antMatcher("/**").authorizeRequests()
-//                .antMatchers("/oauth**").permitAll()
-//                .antMatchers("/register").permitAll()
-//                .antMatchers("/login**").permitAll()
+        http.cors().and().antMatcher("/**").authorizeRequests()
+                .antMatchers("/oauth**", "/oauth/authorize").permitAll()
+                .antMatchers("/api/v1.0/register").permitAll()
+                .antMatchers("/login**").permitAll()
+                .antMatchers("/api/v1.0/**").access(SECURED_READ_SCOPE);
+//                .and()
+//                .formLogin().permitAll()
+//                .and().logout().permitAll()
+//                .and().authorizeRequests()
 //                .anyRequest().authenticated();
 
-        http.authorizeRequests().anyRequest().permitAll();
+//                .and()
+//                .authorizeRequests().anyRequest().authenticated();
+//                .and()
+//                .formLogin().loginPage("/dialog/login").permitAll()
+//                .and()
+//                .authorizeRequests()
+//                .anyRequest().authenticated();
+
+//        http.authorizeRequests().anyRequest().permitAll();
     }
 
 }
