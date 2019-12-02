@@ -318,6 +318,25 @@
 	redirect_uri: <redirect_uri>
 	```
 
+- **User register**
+
+	**`POST`** api/v1.0/register
+
+	**Request**
+
+	```json
+	JSON request
+
+	{
+		"username": "phongsathorn",
+		"firstname": "Phongsathorn",
+		"lastname": "Kittiworapanya",
+		"password": "password",
+		"email": "phongsathron@outlook.com",
+		"role": "ROLE_USER"
+	}
+	```
+
 
 
 ---
