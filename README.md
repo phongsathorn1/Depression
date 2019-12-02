@@ -357,6 +357,12 @@
 - ### Up-Coming Events Service
 	- แนะนำ Events ที่มีส่วนช่วยพัฒนาสุขภาพจิต และ ป้องกัน Mental Disorder ที่ถูกจัดขึ้นในประเทศไทย เช่น กิจกรรรมของ Chula-Wellness
 	
+# Depression
+
+## Event Service
+
+เป็น Service สำหรับการจัดการ Event ในโปรเจ็ค Depression โดยจะสามารถเพิ่ม ดูรายการ Event ทั้งหมด ดูแต่ละ Event และก็ลบ
+
 ### การเพิ่ม Event( URL : /add , Method : Post)
 Example :
 ```json
@@ -371,6 +377,7 @@ Example :
 ```
 
 ### การเข้าดูในต่ละ Event (URL : /view, Method : GET)
+<<<<<<< HEAD
 	จะ Return กลับมาให้เป็น Json
 Example :
 ```json
@@ -383,6 +390,9 @@ Example :
    }
 ]
 ```
+=======
+จะ Return กลับมาให้เป็น Json
+>>>>>>> event_service
 
 ### การลบ Event( URL : /delete/{id} , Method : POST) ID ให้ใส่เลขที่ต้องการจะลบ
 
@@ -390,8 +400,11 @@ Example :
 
 
 
+<<<<<<< HEAD
 ## Use Case
 ![](image/usecase.png)
 
 ## Micro-Services Overview
 ![](image/microservices_overview.png)
+=======
+>>>>>>> event_service
