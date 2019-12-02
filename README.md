@@ -396,7 +396,7 @@ Example :
 
 
 ## Use Case
-![](image/usecase.png)
+![](images/usecase.png)
 
 ## Micro-Services Overview
-![](image/microservices_overview.png)
+![](images/overview.png)

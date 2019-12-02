@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="371acf36-3603-40ec-81a0-9bfd97522bf0" name="Default Changelist" comment="" />
+    <list default="true" id="371acf36-3603-40ec-81a0-9bfd97522bf0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/bin/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/bin/.mvn/wrapper/MavenWrapperDownloader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/bin/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/bin/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/bin/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/bin/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/bin/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/bin/src/main/java/com/depression/discovery/discovery/DiscoveryServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/bin/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/bin/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/bin/src/test/java/com/depression/discovery/discovery/DemoApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/src/main/java/com/depression/discovery/discovery/DiscoveryServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Depression-event_service/discovery/src/test/java/com/depression/discovery/discovery/DemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/.settings/org.eclipse.core.resources.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/target/classes/com/depression/auth/auth/config/AuthServerOAuth2Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/target/classes/com/depression/auth/auth/config/AuthServerOAuth2Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/target/classes/com/depression/auth/auth/config/ResourceServerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/target/classes/com/depression/auth/auth/config/ResourceServerConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/target/classes/com/depression/auth/auth/config/ServerSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/target/classes/com/depression/auth/auth/config/ServerSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/target/classes/com/depression/auth/auth/controller/UserControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/target/classes/com/depression/auth/auth/controller/UserControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/target/classes/com/depression/auth/auth/service/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/target/classes/com/depression/auth/auth/service/UserDetailsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/target/classes/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/target/classes/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resourceserv/.settings/org.eclipse.core.resources.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../resourceserv/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +102,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
