@@ -8,7 +8,7 @@
 	- มีที่มาจากการศึกษางานวิจัยโรคซึมเศร้า, การปรึกษาแพทย์ และ นำมาทำเป็นแบบทดสอบโรคซึมเศร้าเพื่อประเมิณอาการโรคซึมเศร้าและประเภทของโรคซึมเศร้าที่เป็น
 ### 🌱  Usage
 - #### ⭐ Get questions
-  URL :  `/questions`
+  URL :  `test/questions`
   Method :  `GET`
   **Response**
   Code :  `200`
@@ -72,7 +72,7 @@
 ```
 
 - #### ⭐ Get questions by ID
-  URL :  `/questions/{id}`
+  URL :  `test/questions/{id}`
   Method :  `GET`
   **Response**
   Code :  `200`
@@ -107,7 +107,7 @@
 ```
 
 - #### ⭐ Interpretation
-  URL :  `/interpretation`
+  URL :  `test/interpretation`
   Method :  `POST`
   **Response**
   Code :  `200`
@@ -166,7 +166,7 @@
 - ### Authentication Services
 - **Get authentication token**
 	
-	**`POST`** oauth/token
+	**`POST`** auth/oauth/token
 	
 	**Request**
 
@@ -199,7 +199,7 @@
 
 - **Check authentication token**
 
-	**`GET`** oauth/check_token
+	**`GET`** auth/oauth/check_token
 
 	**Request**
 
@@ -236,7 +236,7 @@
 
 - **Check authentication token**
 
-	**`GET`** api/v1.0/me
+	**`GET`** auth/api/v1.0/me
 
 	**Request**
 
@@ -260,7 +260,7 @@
 
 - **Register client**
 
-	**`GET`** client/register
+	**`GET`** auth/client/register
 
 	**Request**
 	```
@@ -306,7 +306,7 @@
 
 - **Client Authorize**
 
-	**`GET`** oauth/authorize
+	**`GET`** auth/oauth/authorize
 
 	**Request**
 
@@ -320,7 +320,7 @@
 
 - **User register**
 
-	**`POST`** api/v1.0/register
+	**`POST`** auth/api/v1.0/register
 
 	**Request**
 
@@ -345,7 +345,7 @@
   - 🌱 Usage
     - get all location
     ```
-        GET http://35.225.198.249:8000/location/
+        GET hospital/location/
     ```
 
     ```python
@@ -363,7 +363,7 @@
     ```
     - add location
     ```
-        POST http://35.225.198.249:8000/location/
+        POST hospital/location/
     ```
     ```python
         # Payload Type
@@ -379,7 +379,7 @@
 
     - get specific location
     ```
-        GET http://35.225.198.249:8000/location/<id>
+        GET hospital/location/<id>
     ```
 
     ```python
@@ -396,10 +396,10 @@
 
     - edit location infomation
     ```
-        PATCH http://35.225.198.249:8000/location/<id>
+        PATCH hospital/location/<id>
     ```
     ```
-        PUT http://35.225.198.249:8000/location/<id>
+        PUT hospital/location/<id>
     ```
 
     ```python
@@ -417,12 +417,12 @@
 
     - delete location infomation
     ```
-        DELETE http://35.225.198.249:8000/location/<id>
+        DELETE hospital/location/<id>
     ```
 
     - get filter location using user location
     ```
-        GET http://35.225.198.249:8000/location/filter
+        GET hospital/location/filter
     ```
     ```python
         # Parameter
@@ -449,7 +449,7 @@
 	- ให้คำแนะนำเกี่ยวกับการรักษาโรคซึมเศร้า ทั้งในด้านการดูแลตนเองและแนวทางการรักษาของแพทย์
 	- ทำการรับคะแนนที่ได้จาก Depression Test Service มาให้คำแนะนำในการรักษา<br>
 		- รับคำแนะนำการรักษา
-		**URL**: `http://34.69.92.81/suggest/suggestion/{total_score}` **Method**: `GET`
+		**URL**: `suggest/suggest/suggestion/{total_score}` **Method**: `GET`
 		***หมายเหตุ : เพื่อป้องกันข้อผิดพลาดด้านการแสดงผลกรุณาใช้ Postman**  
 			- Get Suggestion
 			- **Response :**
@@ -465,7 +465,7 @@
 		}
 		```
 		- ดูคำแนะนำการรักษาทั้งหมด
-		**URL :** `http://34.69.92.81/suggest/suggestion_list` **Method**: `GET`
+		**URL :** `suggest/suggest/suggestion_list` **Method**: `GET`
 		***หมายเหตุ : เพื่อป้องกันข้อผิดพลาดด้านการแสดงผลกรุณาใช้ Postman**
 			- Get Suggestion List
 			- **Response**
@@ -535,7 +535,7 @@
 
 เป็น Service สำหรับการจัดการ Event ในโปรเจ็ค Depression โดยจะสามารถเพิ่ม ดูรายการ Event ทั้งหมด ดูแต่ละ Event และก็ลบ
 
-### การเพิ่ม Event( URL : /add , Method : Post)
+### การเพิ่ม Event( URL : event/add , Method : Post)
 Example :
 ```json
 [
@@ -548,7 +548,7 @@ Example :
 ]
 ```
 
-### การเข้าดูในแต่ละ Event (URL : /view, Method : GET)
+### การเข้าดูในแต่ละ Event (URL : event/view, Method : GET)
 	จะ Return กลับมาให้เป็น Json
 Example :
 ```json
@@ -562,9 +562,9 @@ Example :
 ]
 ```
 
-### การลบ Event( URL : /delete/{id} , Method : POST) ID ให้ใส่เลขที่ต้องการจะลบ
+### การลบ Event( URL : event/delete/{id} , Method : POST) ID ให้ใส่เลขที่ต้องการจะลบ
 
-###  ดูแต่ละ Event (URL : /view/{id} , Method : POST) ID ให้ใส่เลขที่ต้องการจะดู
+###  ดูแต่ละ Event (URL : event/view/{id} , Method : POST) ID ให้ใส่เลขที่ต้องการจะดู
 
 
 ## Use Case

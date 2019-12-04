@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5836bfa4-101e-404f-886b-b31b6c9f5cca" name="Default Changelist" comment="" />
+    <list default="true" id="5836bfa4-101e-404f-886b-b31b6c9f5cca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/AuthApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/AuthApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/config/AuthServerOAuth2Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/config/AuthServerOAuth2Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/config/ResourceServerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/config/ResourceServerConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/config/ServerSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/config/ServerSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/controller/UserControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/controller/UserControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/error/ApiError.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/error/ApiError.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/model/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/model/UserInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/model/UserRequestModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/model/UserRequestModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/repository/UserDetailsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/repository/UserDetailsRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/service/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/service/UserDetailsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/depression/auth/auth/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/depression/auth/auth/AuthApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/depression/auth/auth/AuthApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/target/classes/application.yml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
