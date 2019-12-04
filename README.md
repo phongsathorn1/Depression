@@ -531,7 +531,7 @@
 	
 # Depression
 
-## Event Service
+## Event Service ( URL : `http://35.247.175.250:8000` )
 
 เป็น Service สำหรับการจัดการ Event ในโปรเจ็ค Depression โดยจะสามารถเพิ่ม ดูรายการ Event ทั้งหมด ดูแต่ละ Event และก็ลบ
 

@@ -1,7 +1,7 @@
 
 spring:
    application:
-      name: event-service
+      name: myevent-service
    profiles:
       active: default
    cloud:
@@ -10,7 +10,11 @@ spring:
 
 eureka:
    instance:
+      hostname: 35.236.184.82
       preferIpAddress: true
+      port: 8761
+      ipAddress: 35.247.175.250
+      
    client:
       serviceUrl:
          defaultZone: http://34.66.153.219:8761/eureka/

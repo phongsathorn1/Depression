@@ -9,6 +9,9 @@ spring:
 eureka:
   instance:
     preferIpAddress: true
+    hostname: 35.247.175.250
+    port: 8080
+    ipAddress: 35.247.175.250
   client:
     serviceUrl:
       defaultZone: http://34.66.153.219:8761/eureka/
