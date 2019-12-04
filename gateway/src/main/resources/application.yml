@@ -4,11 +4,42 @@ server:
 spring:
   application:
     name: gateway-edge-server
+  cloud:
+    discovery:
+      client:
+        simple:
+          local:
+            uri: http://35.236.184.82
+
 eureka:
   instance:
-    hostname: 34.66.153.219
+    hostname: 35.236.184.82
     port: 8761
     preferIpAddress: true
+    ipAddress: 35.236.184.82
   client:
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+      defaultZone: http://34.66.153.219:${eureka.instance.port}/eureka/
+
+zuul:
+  routes:
+    auth:
+      path: /auth/**
+      serviceId: authentication-service
+      stripPrefix: true
+    test:
+      path: /test/**
+      serviceId: depression-test
+      stripPrefix: true
+    event:
+      path: /event/**
+      serviceId: event-service
+      stripPrefix: true
+    suggest:
+      path: /suggest/**
+      serviceId: suggestion_service
+      stripPrefix: true
+    location:
+      path: /hospital/**
+      serviceId: location-service
+      stripPrefix: true
